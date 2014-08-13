@@ -47,10 +47,11 @@ public class ScrollScript : MonoBehaviour
 			transform.Translate( Vector3.down * ScrollSpeed * Time.deltaTime );
 		}
 
-		Ray			ray			  = camera.ScreenPointToRay( Input.mousePosition );
-		RaycastHit 	hit;
 
-		Vector3			zoomDirection = ray.direction;
+		// Get the direction of the mouse from the camera.
+		Vector3			zoomDirection	  = ( camera.ScreenToWorldPoint( new Vector3( Input.mousePosition.x, Input.mousePosition.y, camera.nearClipPlane ) ) - transform.position ).normalized;
+
+		// Translate the transform towards the mouse.
 		transform.Translate( new Vector3( zoomDirection.x, zoomDirection.z, -zoomDirection.y ) * Input.GetAxis( "Mouse ScrollWheel" ) * zoomSpeed );
 	}
 }
