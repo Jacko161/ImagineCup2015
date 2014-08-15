@@ -9,8 +9,8 @@ public class ScrollScript : MonoBehaviour
 	// Multiplyer for zoom speed.
 	public float				zoomSpeed 	= 1.0f;
 
-	// Percentage of the screen size from the edge of the screen that will cause scrolling.
-	public float				ScrollFactor = 0.2f;
+	// Distance from the edge of the screen in pixels that the mouse will scroll in.
+	public int 					ScrollDistance = 200;
 
 
 
@@ -29,20 +29,20 @@ public class ScrollScript : MonoBehaviour
 	//
 	void Update () 
 	{
-		if ( Input.mousePosition.x > ( Screen.width - ( Screen.width * ScrollFactor ) ) ) 
+		if ( Input.mousePosition.x > ( Screen.width - ScrollDistance ) ) 
 		{
 			transform.Translate( Vector3.right * ScrollSpeed * Time.deltaTime );
 		}
-		else if( Input.mousePosition.x < ( Screen.width * ScrollFactor ) )
+		else if( Input.mousePosition.x < ScrollDistance )
 		{
 			transform.Translate( Vector3.left * ScrollSpeed * Time.deltaTime );
 		}
 
-		if ( Input.mousePosition.y > ( Screen.height - ( Screen.height * ScrollFactor ) ) ) 
+		if ( Input.mousePosition.y > ( Screen.height - ScrollDistance ) ) 
 		{
 			transform.Translate( Vector3.up * ScrollSpeed * Time.deltaTime );
 		}
-		else if( Input.mousePosition.y < ( Screen.height * ScrollFactor ) )
+		else if( Input.mousePosition.y < ScrollDistance )
 		{
 			transform.Translate( Vector3.down * ScrollSpeed * Time.deltaTime );
 		}
