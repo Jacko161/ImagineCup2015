@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScrollScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerCubeMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\ScrollScript.cs" Line="48" Column="4" />
+      <File FileName="Assets\PlayerCubeMovement.cs" Line="18" Column="2" />
+      <File FileName="Assets\Scripts\ScrollScript.cs" Line="37" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
